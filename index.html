@@ -7,6 +7,7 @@
 </head>
 
 <body>
+
   <h1>Salam Walid! 👋</h1>
   <p>مرحبا بكم في موقعي</p>
 
@@ -29,7 +30,6 @@
   </div>
 
   <script type="module">
-
     import { initializeApp }
       from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
 
@@ -40,227 +40,7 @@
     } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
 
     const firebaseConfig = {
-      apiKey: "<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Walid Page</title>
-</head>
-
-<body>
-
-  <h1>Salam Walid! 👋</h1>
-  <p>مرحبا بكم في موقعي</p>
-
-  <h2>تسجيل الدخول</h2>
-
-  <input
-    type="tel"
-    id="phoneNumber"
-    placeholder="+213XXXXXXXXX"
-  >
-
-  <button id="sendCode">إرسال الرمز</button>
-
-  <div id="recaptcha-container"></div>
-
-  <div id="verificationSection" style="display:none;">
-    <input
-      type="text"
-      id="verificationCode"
-      placeholder="رمز SMS"
-    >
-
-    <button id="verifyCode">تأكيد</button>
-  </div>
-
-  <div id="privateContent" style="display:none;">
-    <h2>مرحبا بك ❤️</h2>
-
-    <p>
-      هذه الصورة والرسالة خاصة بالمستخدمين المسجلين.
-    </p>
-
-    <img
-      src="IMG_5162.jpeg"
-      alt="صورة"
-      width="300"
-    >
-  </div>
-
-
-  <script type="module">
-
-    import { initializeApp }
-      from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
-
-    import {
-      getAuth,
-      RecaptchaVerifier,
-      signInWithPhoneNumber
-    } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
-
-
-    const firebaseConfig = {
-
-      apiKey: "YOUR_API_KEY",
-
-      authDomain: "walid-page.firebaseapp.com",
-
-      projectId: "walid-page",
-
-      storageBucket: "walid-page.firebasestorage.app",
-
-      messagingSenderId: "453261638359",
-
-      appId: "1:453261638359:web:dc110ef163ab81be424e92",
-
-      measurementId: "G-73JH0Z42SR"
-    };
-
-
-    const app = initializeApp(firebaseConfig);
-
-    const auth = getAuth(app);
-
-
-    const sendCodeButton =
-      document.getElementById("sendCode");
-
-    const verifyCodeButton =
-      document.getElementById("verifyCode");
-
-    const phoneInput =
-      document.getElementById("phoneNumber");
-
-    const codeInput =
-      document.getElementById("verificationCode");
-
-    const verificationSection =
-      document.getElementById("verificationSection");
-
-    const privateContent =
-      document.getElementById("privateContent");
-
-
-    const appVerifier = new RecaptchaVerifier(
-      auth,
-      "recaptcha-container",
-      {
-        size: "normal"
-      }
-    );
-
-
-    let confirmationResult = null;
-
-
-    sendCodeButton.addEventListener(
-      "click",
-      async () => {
-
-        const phoneNumber =
-          phoneInput.value.trim();
-
-
-        if (!phoneNumber) {
-
-          alert("اكتب رقم الهاتف أولاً");
-
-          return;
-        }
-
-
-        try {
-
-          confirmationResult =
-            await signInWithPhoneNumber(
-              auth,
-              phoneNumber,
-              appVerifier
-            );
-
-
-          verificationSection.style.display =
-            "block";
-
-
-          alert(
-            "تم إرسال رمز التحقق ✅"
-          );
-
-
-        } catch (error) {
-
-          console.error(error);
-
-          alert(
-            "حدث خطأ أثناء إرسال الرمز"
-          );
-        }
-      }
-    );
-
-
-    verifyCodeButton.addEventListener(
-      "click",
-      async () => {
-
-        const code =
-          codeInput.value.trim();
-
-
-        if (!code) {
-
-          alert("اكتب رمز التحقق");
-
-          return;
-        }
-
-
-        if (!confirmationResult) {
-
-          alert(
-            "أرسل رمز التحقق أولاً"
-          );
-
-          return;
-        }
-
-
-        try {
-
-          await confirmationResult.confirm(
-            code
-          );
-
-
-          privateContent.style.display =
-            "block";
-
-
-          alert(
-            "تم تسجيل الدخول بنجاح ✅"
-          );
-
-
-        } catch (error) {
-
-          console.error(error);
-
-          alert(
-            "رمز التحقق غير صحيح"
-          );
-        }
-      }
-    );
-
-  </script>
-
-</body>
-</html>",
+      apiKey: "AIzaSyBPk31dYYK8r_NVxiPB2Qrhs8yfpbjXxxY",
       authDomain: "walid-page.firebaseapp.com",
       projectId: "walid-page",
       storageBucket: "walid-page.firebasestorage.app",
@@ -272,22 +52,20 @@
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
 
-    const sendCodeButton = document.getElementById("sendCode");
-    const verifyCodeButton = document.getElementById("verifyCode");
     const phoneInput = document.getElementById("phoneNumber");
     const codeInput = document.getElementById("verificationCode");
+    const sendCodeButton = document.getElementById("sendCode");
+    const verifyCodeButton = document.getElementById("verifyCode");
     const verificationSection = document.getElementById("verificationSection");
     const privateContent = document.getElementById("privateContent");
 
     const appVerifier = new RecaptchaVerifier(
       auth,
       "recaptcha-container",
-      {
-        size: "normal"
-      }
+      { size: "normal" }
     );
 
-    let confirmationResult;
+    let confirmationResult = null;
 
     sendCodeButton.addEventListener("click", async () => {
       const phoneNumber = phoneInput.value.trim();
@@ -321,6 +99,11 @@
         return;
       }
 
+      if (!confirmationResult) {
+        alert("اضغط إرسال الرمز أولاً");
+        return;
+      }
+
       try {
         await confirmationResult.confirm(code);
         privateContent.style.display = "block";
@@ -331,7 +114,7 @@
         alert("رمز التحقق غير صحيح");
       }
     });
-
   </script>
+
 </body>
 </html>
