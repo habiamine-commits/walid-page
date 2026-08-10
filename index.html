@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>أسئلة وليد</title>
+</head>
+
+<body>
+  <h1>مرحبا 👋</h1>
+
+  <h2 id="question"></h2>
+
+  <input id="answer" type="text" placeholder="اكتب إجابتك">
+
+  <button onclick="nextQuestion()">التالي</button>
+
+  <script>
+    const questions = [
+      "ما اسمك؟",
+      "ما لونك المفضل؟",
+      "ما هي هوايتك؟",
+      "ما أكلك المفضل؟",
+      "ما حلمك في المستقبل؟"
+    ];
+
+    let number = 0;
+
+    document.getElementById("question").textContent = questions[number];
+
+    function nextQuestion() {
+      const answer = document.getElementById("answer").value;
+
+      if (answer.trim() === "") {
+        alert("اكتب إجابتك أولاً");
+        return;
+      }
+
+      number++;
+
+      if (number < questions.length) {
+        document.getElementById("question").textContent = questions[number];
+        document.getElementById("answer").value = "";
+      } else {
+        document.body.innerHTML = "<h1>انتهت الأسئلة 🎉</h1>";
+      }
+    }
+  </script>
+</body>
+</html>
